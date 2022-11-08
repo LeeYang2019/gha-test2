@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Rest API with curl
         run: |
-          curl --location --request POST 'https://api.github.com/repos/${{github.repository}}/gha-test/dispatches' \
+          curl --location --request POST 'https://api.github.com/repos/leeyang2019/gha-test/dispatches' \
           --header 'Accept: application/vnd.github+json' \
           --header 'Content-Type: application/json' \
           --header 'Authorization: Basic ${{secrets.ACCESS_TOKEN}}' \
