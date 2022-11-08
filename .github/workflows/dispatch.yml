@@ -5,15 +5,13 @@ on:
     types: [run]
 
 jobs:
-  curl:
+  run-updater:
     runs-on: ubuntu-latest
     steps:
-      - name: curl
-        uses: wei/curl@master@v1
-        with:
-          args: |
-            curl --location --request POST 'https://api.github.com/repos/leeyang2019/gha-test/dispatches' \
-            --header 'Accept: application/vnd.github+json' \
-            --header 'Content-Type: application/json' \
-            --header 'Authorization: Basic OmdocF9JQzZFZDYxeWdWTlBWdUVjSlk5TjhWUm1pNVRrVkYyVDRQMFQ=' \
-            --data-raw '{ "event_type": "runit" }'
+      - name: Rest API with curl
+        run: |
+          curl --location --request POST 'https://api.github.com/repos/leeyang2019/gha-test/dispatches' \
+          --header 'Accept: application/vnd.github+json' \
+          --header 'Content-Type: application/json' \
+          --header 'Authorization: Basic OmdocF9JQzZFZDYxeWdWTlBWdUVjSlk5TjhWUm1pNVRrVkYyVDRQMFQ=' \
+          --data-raw '{ "event_type": "runit" }'
