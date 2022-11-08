@@ -14,4 +14,4 @@ jobs:
           --header 'Accept: application/vnd.github+json' \
           --header 'Content-Type: application/json' \
           --header 'Authorization: Basic OmdocF9JQzZFZDYxeWdWTlBWdUVjSlk5TjhWUm1pNVRrVkYyVDRQMFQ=' \
-          --data-raw '{ "event_type": "runit" }'
+          --data-raw '{ "event_type": "${{github.event.client_payload.env}}" }'
