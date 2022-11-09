@@ -2,7 +2,7 @@ name: Dispatch Workflow
 
 on:
   repository_dispatch:
-    types: [run]
+    types: [runGHATest]
 
 jobs:
   run-updater:
@@ -13,5 +13,5 @@ jobs:
           curl --location --request POST 'https://api.github.com/repos/leeyang2019/gha-test/dispatches' \
           --header 'Accept: application/vnd.github+json' \
           --header 'Content-Type: application/json' \
-          --header 'Authorization: Basic ${{secrets.ACCESS_TOKEN}}' \
-          --data-raw '{ "event_type": "${{github.event.client_payload.env}}" }'
+          --header 'Authorization: Basic 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' \
+          --data-raw '{ "event_type": "${{github.event.client_payload.action}}" }'
