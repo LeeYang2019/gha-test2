@@ -13,5 +13,5 @@ jobs:
           curl --location --request POST 'https://api.github.com/repos/leeyang2019/gha-test/dispatches' \
           --header 'Accept: application/vnd.github+json' \
           --header 'Content-Type: application/json' \
-          --header 'Authorization: Basic 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' \
+          --header 'Authorization: Basic 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' \
           --data-raw '{ "event_type": "${{github.event.client_payload.action}}" }'
